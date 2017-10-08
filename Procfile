@@ -1,1 +1,1 @@
-web: gunicorn singaporeplacesbot.py --log-file -
+web: python singaporeplacesbot.py
