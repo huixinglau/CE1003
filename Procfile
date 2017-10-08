@@ -1,1 +1,1 @@
-web: python singaporeplacesbot.py
+bot: python3 singaporeplacesbot.py
