@@ -162,7 +162,7 @@ def handle(msg):
             sendAddress = "\U0001F50E: " + longAddress
 
             # Find the town
-            placePoint = Point (lat , lon)
+            placePoint = Point (lon , lat)
             #print (placePoint)
             
             for y in range (0, len(polygonList)): 
