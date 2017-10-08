@@ -202,7 +202,7 @@ def handle(msg):
                         weatherName = weatherInterpret[weatherInd]                   
 
                         # Send weather to user
-                        sendWeather = "\U00002600': The weather is " + weatherName + "."
+                        sendWeather = "\U00002600: The weather is " + weatherName + "."
                 else:
                     sendWeather = "\U00002600: We currently do not have information about the weather."
 
