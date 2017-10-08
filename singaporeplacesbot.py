@@ -21,7 +21,7 @@ from pprint import pprint
 
 
 bot = telepot.Bot("463338689:AAEoVE1MnKlXtvRLz7ZlD9YA6H9jVEIJak8")
-mapPath = "/Users/huixinglau/Documents/CE1003/my_env/CE1003/Planning Area Boundary (Web).kml"
+mapPath = "Planning Area Boundary (Web).kml"
 
 # This is the list of abbreviations used by NEA
 weatherAbbrev = ["BR", "CL", "DR", "FA", "FG", "FN", "FW", "HG",
