@@ -164,7 +164,9 @@ def handle(msg):
             # Find the town
             placePoint = Point (lon , lat)
             #print (placePoint)
-            
+
+            sendWeather = "\U00002600: We currently do not have information about the weather."
+
             for y in range (0, len(polygonList)): 
                 if (polygonList[y].contains(placePoint)):
                 
@@ -203,9 +205,6 @@ def handle(msg):
 
                         # Send weather to user
                         sendWeather = "\U00002600: The weather is " + weatherName + "."
-                else:
-                    sendWeather = "\U00002600: We currently do not have information about the weather."
-
 
             # Provide places to go to
             placesTypeList = ["cafe","gym","library","movie_theater","park","shopping_mall","restaurant"]
