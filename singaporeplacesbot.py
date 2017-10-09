@@ -225,9 +225,9 @@ def handle(msg):
                         placeName = jsonPlacesResponse["results"][b]['name']
                         #print (placeName)
                         if b == 0:
-                            placeStr = placesTypeNameList[z] + ": \n1. " + placeName + "\n"
+                            placeStr = "\n" + placesTypeNameList[z] + ": \n1. " + placeName + "\n"
                         else:
-                            placeStr = str(b) + ": " + placeName + "\n"
+                            placeStr = str(b+1) + ": " + placeName + "\n"
                         placesInfoList = placesInfoList + placeStr
 
             #print(placesInfoList)
@@ -242,7 +242,7 @@ def handle(msg):
 
             # Return results to user
             googleAppURL = "https://www.google.com.sg/maps/place/" + address
-            sendText = sendAddress + "\n\n" + sendWeather + "\n\n" + sendPlace + "\n Launch Google Maps:\n" + googleAppURL
+            sendText = sendAddress + "\n\n" + sendWeather + "\n" + sendPlace + "\nLaunch Google Maps:\n" + googleAppURL
             bot.sendMessage (chatID,sendText)
         
 MessageLoop(bot, handle).run_as_thread()
