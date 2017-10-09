@@ -227,7 +227,7 @@ def handle(msg):
                         if b == 0:
                             placeStr = "\n" + placesTypeNameList[z] + ": \n1. " + placeName + "\n"
                         else:
-                            placeStr = str(b+1) + ": " + placeName + "\n"
+                            placeStr = str(b+1) + ". " + placeName + "\n"
                         placesInfoList = placesInfoList + placeStr
 
             #print(placesInfoList)
