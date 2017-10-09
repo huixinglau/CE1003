@@ -139,7 +139,7 @@ def handle(msg):
     userMessage = msg['text']
     
     if userMessage == "/start":
-        bot.sendMessage (chatID,"Please enter an address!")
+        bot.sendMessage (chatID,"Please enter a place!")
 
     else:
         
@@ -225,9 +225,9 @@ def handle(msg):
                         placeName = jsonPlacesResponse["results"][b]['name']
                         #print (placeName)
                         if b == 0:
-                            placeStr = "\n" + placesTypeNameList[z] + ": \n" + placeName + "\n"
+                            placeStr = placesTypeNameList[z] + ": \n1. " + placeName + "\n"
                         else:
-                            placeStr = placeName + "\n"
+                            placeStr = str(b) + ": " + placeName + "\n"
                         placesInfoList = placesInfoList + placeStr
 
             #print(placesInfoList)
@@ -241,7 +241,8 @@ def handle(msg):
                 sendPlace = placesInfoList
 
             # Return results to user
-            sendText = sendAddress + "\n\n" + sendWeather + "\n\n" + sendPlace
+            googleAppURL = "https://www.google.com.sg/maps/place/" + address
+            sendText = sendAddress + "\n\n" + sendWeather + "\n\n" + sendPlace + "\n Launch Google Maps:\n" + googleAppURL
             bot.sendMessage (chatID,sendText)
         
 MessageLoop(bot, handle).run_as_thread()
