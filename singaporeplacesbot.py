@@ -213,18 +213,24 @@ def handle(msg):
 
             for z in range (0, len(placesTypeList)):
                 
-                placesURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ str(lat) + "," + str(lon) + "&radius=1000&types=" + placesTypeList[z] + "&name=cruise&key=" + googleMapAPI
+                placesURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="+ str(lat) + "," + str(lon) + "&radius=500&types=" + placesTypeList[z] + "&key=" + googleMapAPI
+                #print (placesURL)
                 placesResponse = requests.get(placesURL)
                 jsonPlacesResponse = placesResponse.json()
-                #pprint (jsonPlacesResponse)
+                #print (jsonPlacesResponse)
+                
                 if jsonPlacesResponse["results"] != []:
-                    
-                    placeName = jsonPlacesResponse["results"][0]['name']
-                    #print (placeName)
-                    placeStr = placesTypeNameList[z] + ": " + placeName + "\n"
-                    placesInfoList = placesInfoList + placeStr
+                    for b in range (0, len(jsonPlacesResponse["results"])):
+                        #print (len(jsonPlacesResponse["results"]))
+                        placeName = jsonPlacesResponse["results"][b]['name']
+                        #print (placeName)
+                        if b == 0:
+                            placeStr = "\n" + placesTypeNameList[z] + ": \n" + placeName + "\n"
+                        else:
+                            placeStr = placeName + "\n"
+                        placesInfoList = placesInfoList + placeStr
 
-            print(placesInfoList)
+            #print(placesInfoList)
 
             if placesInfoList == []:
 
